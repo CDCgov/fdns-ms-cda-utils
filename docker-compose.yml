@@ -1,0 +1,6 @@
+version: '3'
+services:
+  fluentd:
+    image: fluent/fluentd
+    ports:
+      - "24224:24224"
