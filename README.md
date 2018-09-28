@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/CDCgov/fdns-ms-cda-utils.svg?branch=master)](https://travis-ci.org/CDCgov/fdns-ms-cda-utils)
+
 # FDNS CDA Utilities Microservice
 This is the repository with the CDA utilities service to parse and generate sample CDA data.
 
