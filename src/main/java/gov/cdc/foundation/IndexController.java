@@ -2,6 +2,7 @@ package gov.cdc.foundation;
 
 import java.io.IOException;
 
+import org.apache.commons.codec.Charsets;
 import org.apache.commons.io.IOUtils;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.MediaType;
@@ -18,7 +19,7 @@ public class IndexController {
 	@RequestMapping(method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
 	@ResponseBody
 	public String index() throws IOException {
-		return IOUtils.toString(IndexController.class.getResourceAsStream("/index.html"));
+		return IOUtils.toString(IndexController.class.getResourceAsStream("/index.html"), Charsets.UTF_8);
 	}
 
 }
