@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+  fluentd:
+    image: fluent/fluentd
+    ports:
+      - "24224:24224"
+  fdns-ms-cda-utils:
+    image: cdcgov/fdns-ms-cda-utils
+    ports:
+      - "8081:8081"
+    depends_on:
+      - fluentd
+    environment:
+      CDA_UTILS_PORT: 8081
+      CDA_UTILS_FLUENTD_HOST: fluentd
+      CDA_UTILS_FLUENTD_PORT: 24224
