@@ -4,3 +4,7 @@ services:
     image: fluent/fluentd
     ports:
       - "24224:24224"
+  fdns-ms-stubbing:
+    image: cdcgov/fdns-ms-stubbing
+    ports:
+      - "3002:3002" 

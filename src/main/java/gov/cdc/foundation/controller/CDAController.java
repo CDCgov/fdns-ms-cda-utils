@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +17,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -65,8 +63,14 @@ public class CDAController {
 		}
 	}
 
-	@RequestMapping(value = "json", method = RequestMethod.POST)
-	@ApiOperation(value = "Transform CDA to JSON", notes = "Transforms a CDA message to JSON object.")
+	@RequestMapping(
+		value = "json",
+		method = RequestMethod.POST
+	)
+	@ApiOperation(
+		value = "Transform CDA to JSON",
+		notes = "Transforms a CDA message to JSON object."
+	)
 	@ResponseBody
 	public ResponseEntity<?> transformCDAtoJSON(@RequestBody(required = true) String message) {
 		ObjectMapper mapper = new ObjectMapper();
@@ -89,11 +93,17 @@ public class CDAController {
 		}
 	}
 
-	@RequestMapping(value = "generate", method = RequestMethod.GET, produces = MediaType.APPLICATION_XML_VALUE)
-	@ApiOperation(value = "Generate random CDA message", notes = "Generates a random CDA message. All names, characters, and incidents generated when calling this API are fictitious. No identification with actual persons (living or deceased), places, buildings, and products is intended or should be inferred. Any resemblance to real persons, living or dead, is purely coincidental.")
+	@RequestMapping(
+		value = "generate",
+		method = RequestMethod.GET,
+		produces = MediaType.APPLICATION_XML_VALUE
+	)
+	@ApiOperation(
+		value = "Generate random CDA message",
+		notes = "Generates a random CDA message. All names, characters, and incidents generated when calling this API are fictitious. No identification with actual persons (living or deceased), places, buildings, and products is intended or should be inferred. Any resemblance to real persons, living or dead, is purely coincidental."
+	)
 	@ResponseBody
 	public ResponseEntity<?> generate() {
-
 		Map<String, Object> log = new HashMap<>();
 		log.put(MessageHelper.CONST_METHOD, MessageHelper.METHOD_GENERATE);
 
