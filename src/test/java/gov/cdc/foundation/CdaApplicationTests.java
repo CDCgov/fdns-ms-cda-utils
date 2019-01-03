@@ -30,9 +30,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, properties = { 
-		"logging.fluentd.host=localhost", 
+		"logging.fluentd.host=fluentd", 
 		"logging.fluentd.port=24224",
-		"proxy.hostname=localhost",
+		"proxy.hostname=",
 		"security.oauth2.resource.user-info-uri=",
 		"security.oauth2.protected=",
 		"security.oauth2.client.client-id=",

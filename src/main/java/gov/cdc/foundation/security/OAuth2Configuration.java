@@ -35,7 +35,7 @@ public class OAuth2Configuration extends ResourceServerConfigurerAdapter {
 				.authorizeRequests()
 				.antMatchers(HttpMethod.OPTIONS).permitAll()
 				.antMatchers("/api/1.0/").permitAll()
-				.antMatchers(protectedURIs).access("#oauth2.hasScope('cda-utils')")
+				.antMatchers(protectedURIs).access("#oauth2.hasScope('fdns.cda-utils')")
 				.anyRequest().permitAll();
 		else
 			http
